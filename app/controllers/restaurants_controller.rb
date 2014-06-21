@@ -16,7 +16,7 @@ class RestaurantsController < ApplicationController
   end
 
   def list_ten
-
+    @restaurants = Restaurant.all.last(10)
   end
 
 end
