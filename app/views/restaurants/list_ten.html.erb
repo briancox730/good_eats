@@ -1,1 +1,9 @@
-list_ten.html.erb
+<table class="table table-hover">
+  <% @restaurants.each do |r| %>
+  <tr>
+    <td><%= link_to r.name, restaurant_path(r.id) %></td>
+    <td><%= r.city %></td>
+    <td><%= r.category.category %></td>
+  </tr>
+  <% end %>
+</table>
