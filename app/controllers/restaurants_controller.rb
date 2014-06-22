@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
+    @category = Category.new
   end
 
   def create
@@ -29,7 +30,7 @@ class RestaurantsController < ApplicationController
 
   private
 
-  def question_params
+  def restaurant_params
     params.require(:restaurant).permit(:name, :address, :city, :state, :zipcode, :description, :category_id)
   end
 

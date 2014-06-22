@@ -13,9 +13,11 @@
   <%= @restaurant.description %>
 </p>
 
-<h4>Reviews:</h4>
+<%= link_to 'Add Review', new_restaurant_review_path(@restaurant), class: "btn btn-primary" %><br><br>
 
 <table class="table table-hover">
+  <th>Rating</th>
+  <th>Review</th>
   <% @reviews.each do |r| %>
     <tr>
       <td><%= r.rating %></td>

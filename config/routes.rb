@@ -2,6 +2,12 @@ Rails.application.routes.draw do
 
   resources :restaurants
 
+  resources :categories
+
+  resources :restaurants do
+    resources :reviews
+  end
+
   root to: 'restaurants#list_ten'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

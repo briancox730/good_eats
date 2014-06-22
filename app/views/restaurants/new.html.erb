@@ -1,3 +1,14 @@
+<div class="jumbotron">
+  <h4>Does the restaurant category exist?</h4><br>
+  <%= form_for @category do |f| %>
+    <%= f.text_field :category, value: "Category", class: "form-control" %><br>
+
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<h2>Add a restaurant</h2>
+
 <%= form_for @restaurant, html: { role: "form" } do |f| %>
   <div class="form-group">
     <%= f.label :name %>
@@ -31,5 +42,5 @@
 
   <%= f.collection_select :category_id, Category.all, :id, :category, {:include_blank => 'Category'}, {class: "form-control"} %><br>
 
-  <%= f.submit class: "btn btn-default"%>
+  <%= f.submit class: "btn btn-primary"%>
 <% end %>
