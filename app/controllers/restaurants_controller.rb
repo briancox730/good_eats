@@ -1,11 +1,11 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all.includes(:category)
+    @restaurants = Restaurant.all.includes(:category).limit(20)
   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @reviews = @restaurant.reviews
+    @reviews = @restaurant.reviews.limit(10)
   end
 
   def new
